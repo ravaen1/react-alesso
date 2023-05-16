@@ -12,6 +12,16 @@ function App() {
     setCantidad(+e.target.value)
   }
 
+  function handleClickDecremento(){
+    const valor = cantidad - STEP; 
+
+    if(valor < MIN){
+      alert('cantidad no valida');
+    }
+
+    setCantidad(valor);
+  }
+
   return (
     <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
       <Header />
@@ -20,7 +30,8 @@ function App() {
 
         <button
         type="button"
-        className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-600"        
+        className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-600" 
+        onClick={handleClickDecremento}       
         >-</button>
       
 
@@ -28,7 +39,6 @@ function App() {
         type="button"
         className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-600"        
         >+</button>
-
       </div>
 
       <input type="range" 
