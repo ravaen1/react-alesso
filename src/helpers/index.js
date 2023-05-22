@@ -6,3 +6,7 @@ const formatearDinero = (valor) => {
     return formatter.format(valor)
 
 }
+
+export {
+    formatearDinero
+}
